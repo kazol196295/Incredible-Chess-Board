@@ -1,21 +1,37 @@
-# Incredible Chess Board
+# Peripheral Project
 
-**"Incredible Chess"** is an innovative and distinctive variant of the traditional chess game, offering a fresh and unique take on one of the most enduring and beloved board games in history. Unlike conventional chess, where players manage a variety of pieces with different movement patterns, "Incredible Chess" simplifies the game by featuring only pawns. However, these pawns come with a twist: they possess the ability to move forward or backward by any positive number of steps, as long as they do not jump over any other piece. This new movement dynamic adds a layer of strategy and complexity to the game, challenging players to think several moves ahead and consider multiple variables in their decision-making process.
+This is a university project for the peripheral course of CSE.
+
+## Overview
+
+This project involves an Arduino-based system that uses various components such as a servo motor, ultrasonic sensor, and load cell. The system performs actions based on distance measurements from the ultrasonic sensor and weight measurements from the load cell.
+
+## Components
+
+- **Servo Motor**: Used to perform actions based on sensor input.
+- **Ultrasonic Sensor**: Measures distance to detect objects.
+- **Load Cell**: Measures weight to trigger actions based on weight thresholds.
 
 ## Features
 
-- **Simplified Gameplay**: Only pawns are used, making it easier for new players to learn.
-- **Advanced Movement**: Pawns can move forward or backward by any positive number of steps without jumping over other pieces.
-- **Strategic Depth**: New movement dynamics introduce new strategies and complexities.
+- **Distance Measurement**: Uses an ultrasonic sensor to measure distance and trigger the servo motor when an object is within 20 cm.
+- **Weight Measurement**: Uses a load cell to measure weight and trigger actions if the weight exceeds 400 grams.
+- **Calibration and Storage**: Includes functionalities for calibration and storing calibration values in EEPROM.
 
-## Development
+## Code Explanation
 
-"Incredible Chess" has been brought to life through the use of Python and the Pygame library. The choice of Python as the programming language, combined with Pygame’s powerful capabilities for game development, provides an ideal platform for creating a game that is both visually appealing and functionally robust. The game’s design focuses on delivering an intuitive user experience, ensuring that both seasoned chess players and newcomers can enjoy the novel gameplay mechanics without a steep learning curve.
+The main logic of the project is implemented in `main.ino`. The `setup` function initializes the components, and the `loop` function continuously reads the sensor data and triggers the `pingpong` function based on the sensor readings.
 
-## Installation
+## How to Use
 
-To install and run "Incredible Chess" on your local machine, follow these steps:
+1. Upload the `main.ino` file to your Arduino board.
+2. Connect the components as described in the code comments.
+3. Run the project and observe the actions based on distance and weight measurements.
 
-1. Clone the repository:
-   ```sh
-   git clone https://github.com/kazol196295/Incredible-Chess-Board.git
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+Special thanks to the university for providing the resources and guidance for this project.
