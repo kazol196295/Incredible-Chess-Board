@@ -1,32 +1,29 @@
-# Peripheral Project
+# Incredible Chess Board
 
-This is a university project for the peripheral course of CSE.
+Welcome to the Incredible Chess Board project! This project implements a chess engine using the minimax algorithm with alpha-beta pruning. The repository contains the implementation of the chess AI and a report on the project.
 
-## Overview
+## Files in the Repository
 
-This project involves an Arduino-based system that uses various components such as a servo motor, ultrasonic sensor, and load cell. The system performs actions based on distance measurements from the ultrasonic sensor and weight measurements from the load cell.
+### `ai.py`
 
-## Components
+This file contains the main implementation of the chess AI. The key functions are:
 
-- **Servo Motor**: Used to perform actions based on sensor input.
-- **Ultrasonic Sensor**: Measures distance to detect objects.
-- **Load Cell**: Measures weight to trigger actions based on weight thresholds.
+- `get_all_moves(white_locations, black_locations, x)`: Generates all possible moves for a piece located at position `x`.
+- `heuristic_value(white_locations, black_locations)`: Calculates the heuristic value of the board state.
+- `minimax(white_locations, black_locations, turn, alpha, beta)`: Implements the minimax algorithm with alpha-beta pruning to determine the best move.
 
-## Features
+### `Report AI project .pdf`
 
-- **Distance Measurement**: Uses an ultrasonic sensor to measure distance and trigger the servo motor when an object is within 20 cm.
-- **Weight Measurement**: Uses a load cell to measure weight and trigger actions if the weight exceeds 400 grams.
-- **Calibration and Storage**: Includes functionalities for calibration and storing calibration values in EEPROM.
+This is a detailed report on the AI project, explaining the design, implementation, and results of the chess engine.
 
-## Code Explanation
+## How to Run
 
-The main logic of the project is implemented in `main.ino`. The `setup` function initializes the components, and the `loop` function continuously reads the sensor data and triggers the `pingpong` function based on the sensor readings.
+1. Clone the repository:
+   ```sh
+    git clone https://github.com/kazol196295/Incredible-Chess-Board.git
+    cd Incredible-Chess-Board
+    python ai.py
 
-## How to Use
-
-1. Upload the `main.ino` file to your Arduino board.
-2. Connect the components as described in the code comments.
-3. Run the project and observe the actions based on distance and weight measurements.
 
 ## License
 
